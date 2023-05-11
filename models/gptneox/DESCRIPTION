@@ -24,6 +24,6 @@ Collate:
     'gptneox.R'
 Remotes:
     dfalbel/tok
-    dfalbel/modelhub/hfhub
+    dfalbel/modelhub/utils/hfhub
 URL: https://github.com/dfalbel/gptneox
 BugReports: https://github.com/dfalbel/gptneox/issues
