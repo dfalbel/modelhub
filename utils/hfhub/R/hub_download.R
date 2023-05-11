@@ -1,3 +1,5 @@
+#' Download models from HF Hub
+#' @export
 hub_download <- function(repo_id, filename, ..., revision = "main", repo_type = "model", local_files_only = FALSE, force_download = FALSE) {
   cache_dir <- HUGGINGFACE_HUB_CACHE()
   storage_folder <- fs::path(cache_dir, repo_folder_name(repo_id, repo_type))
