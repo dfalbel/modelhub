@@ -75,6 +75,7 @@ gpt_neox_config_from_pretrained <- function(identifier, revision = "main") {
 #'
 #' @describeIn gpt_neox_from_pretrained Creates from a configuration from a HF repository.
 #'
+#' @importFrom hfhub WEIGHTS_NAME WEIGHTS_INDEX_NAME
 #' @export
 gpt_neox_from_pretrained <- function(identifier, ..., revision = "main") {
   config <- gpt_neox_config_from_pretrained(identifier, revision)
