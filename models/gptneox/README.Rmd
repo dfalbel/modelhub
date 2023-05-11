@@ -1,0 +1,56 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+# gptneox
+
+<!-- badges: start -->
+<!-- badges: end -->
+
+gptneox is an R torch implementation of GPTNeoX. It follows closely the [implementation](https://huggingface.co/docs/transformers/model_doc/gpt_neox)
+available in HuggingFace and can be used to load pre-trained models defined there.
+
+## Installation
+
+You can install the development version of gptneox like so:
+
+``` r
+remotes::install_github("dfalbel/gptneox")
+```
+
+Note: This package requires [`tok`](https://github.com/dfalbel/tok), which in turns requires a Rust installation to
+be installed. Follow instruction in the [`tok` repository](https://github.com/dfalbel/tok) to get it installed.
+
+## Example
+
+Here's an example using the StabilityAI 3B parameters model. Note that this model
+is not tuned to provide chat like completions, thus you should write prompts that look
+more like autocomplete queries. You can load other GPTNeoX models, including those
+that have been trained for chat like completions.
+
+```{r example}
+library(gptneox)
+torch::torch_manual_seed(1)
+
+repo <- "stabilityai/stablelm-base-alpha-3b"
+model <- gpt_neox_from_pretrained(repo)
+tok <- gpt_neox_tokenizer_from_pretrained(repo)
+
+gen <- gpt_neox_generate(
+  model, tok, 
+  "The R language was created", 
+  config = list(max_new_tokens = 100)
+)
+```
+
