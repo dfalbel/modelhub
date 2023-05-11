@@ -168,5 +168,11 @@ REGEX_COMMIT_HASH <- function() {
   "^[0-9a-f]{40}$"
 }
 
+#' Weight file names in HUB
+#' 
+#' @describeIn WEIGHTS_NAME Name of weights file
+#' @export
 WEIGHTS_NAME <- function() "pytorch_model.bin"
+#' @export
+#' @describeIn WEIGHTS_NAME Name of weights index file
 WEIGHTS_INDEX_NAME <- function() "pytorch_model.bin.index.json"

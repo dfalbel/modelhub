@@ -3,19 +3,19 @@
 \name{WEIGHTS_NAME}
 \alias{WEIGHTS_NAME}
 \alias{WEIGHTS_INDEX_NAME}
-\title{Constants related to filenames in the HUB}
+\title{Weight file names in HUB}
 \usage{
 WEIGHTS_NAME()
 
 WEIGHTS_INDEX_NAME()
 }
 \description{
-Constants related to filenames in the HUB
+Weight file names in HUB
 }
 \section{Functions}{
 \itemize{
-\item \code{WEIGHTS_NAME()}: Name of the weights file in HF hub.
+\item \code{WEIGHTS_NAME()}: Name of weights file
 
-\item \code{WEIGHTS_INDEX_NAME()}: Name of the weights index file in HF hub.
+\item \code{WEIGHTS_INDEX_NAME()}: Name of weights index file
 
 }}
