@@ -4,6 +4,8 @@
 <!-- badges: start -->
 <!-- badges: end -->
 
+torch port of GPT BigCode. Code in this repository was ported from [HuggingFace](https://github.com/huggingface/transformers/tree/ca26699f375d761b2ac6f27849c04ee5f58a2d63/src/transformers/models/gpt_bigcode) gpt_bigcode.
+
 ## Installation
 
 You can install the development version of gptbigcode from [GitHub](https://github.com/) with:
