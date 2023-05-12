@@ -16,7 +16,7 @@ defined there.
 You can install the development version of gptneox like so:
 
 ``` r
-remotes::install_github("dfalbel/gptneox")
+remotes::install_github("dfalbel/modelhub/models/gptneox")
 ```
 
 Note: This package requires [`tok`](https://github.com/dfalbel/tok),
