@@ -20,6 +20,8 @@ devtools::install_github("dfalbel/modelhub/models/gptbigcode")
 Initializing a model:
 
 ```r
+# this has been trained on Python, JavaScript and Java
+repo <- "bigcode/gpt_bigcode-santacoder"
 config <- gpt_bigcode_config_from_pretrained(repo)
 model <- gpt_bigcode_from_pretrained(repo)
 # weights are in Half, but we get errors for some kernels not implemented
