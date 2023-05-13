@@ -1,5 +1,11 @@
+#' GPTBigCode neural net modules
+#'
 #' @import torch
 #' @importFrom zeallot %<-%
+#' @param config Configuration options as created by [gpt_bigcode_config()].
+#' @param is_cross_attention Is cross attention?
+#' @param layer_idx The layers idx (used to automatically define its size).
+#' @export
 GPTBigCodeAttention <- nn_module(
     "GPTBigCodeAttention",
     initialize = function(config, is_cross_attention=FALSE, layer_idx=NULL) {
@@ -194,6 +200,9 @@ GPTBigCodeAttention <- nn_module(
     }
 )
 
+#' @describeIn GPTBigCodeAttention MLP module
+#' @param intermediate_size the intermediate size
+#' @export
 GPTBigCodeMLP <- nn_module(
     "GPTBigCodeMLP",
     initialize = function(intermediate_size, config) {
@@ -291,6 +300,8 @@ GPTBigCodeBlock <- nn_module(
 #' @include model-utils.R
 NULL
 
+#' @describeIn GPTBigCodeAttention The pretrained model class
+#' @export
 GPTBigCodePreTrainedModel <- nn_module(
     "GPTBigCodePreTrainedModel",
     inherit = module_utils_mixins,
@@ -299,6 +310,8 @@ GPTBigCodePreTrainedModel <- nn_module(
     }
 )
 
+#' @describeIn GPTBigCodeAttention The model class
+#' @export
 GPTBigCodeModel <- nn_module(
     "GPTBigCodeModel",
     inherit = GPTBigCodePreTrainedModel,
@@ -511,6 +524,8 @@ GPTBigCodeModel <- nn_module(
     }
 )
 
+#' @describeIn GPTBigCodeAttention The text generation class
+#' @export
 GPTBigCodeForCausalLM <- nn_module(
   "GPTBigCodeForCausalLM",
   inherit = GPTBigCodeModel,

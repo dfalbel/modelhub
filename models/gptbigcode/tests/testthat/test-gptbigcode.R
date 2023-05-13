@@ -16,6 +16,10 @@ test_that("config from pre-trained", {
   model$to(dtype=torch_float())
   tok <- tok::tokenizer$from_pretrained(repo)
 
+  encoding <- tok$encode("Who created the R language?")
+  encoding$ids
+  lapply(encoding$ids, tok$decode)
+
   prefix <- "def print_hello_world():\n\""
   suffix <- "print('Hello world')"
   prompt <- glue::glue("<fim-prefix>{prefix}<fim-suffix>{suffix}<fim-middle>")

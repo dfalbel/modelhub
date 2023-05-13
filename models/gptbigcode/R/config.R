@@ -1,4 +1,7 @@
+#' Creates a configuration dict for GPTBigCode
 #' @importFrom rlang %||%
+#' @inheritParams gptneox::gpt_neox_config
+#' @export
 gpt_bigcode_config <- function(
     vocab_size=50257,
     n_positions=1024,
@@ -57,13 +60,19 @@ gpt_bigcode_config <- function(
 }
 
 #' @importFrom hfhub hub_download
+#' @describeIn gpt_bigcode_config Load a config from a modelhub model
+#' @inheritParams gptneox::gpt_neox_from_pretrained
+#' @export
 gpt_bigcode_config_from_pretrained <- function(identifier, revision = "main") {
   path <- hub_download(identifier, "config.json", revision = revision)
   config <- jsonlite::fromJSON(path)
   do.call(gpt_bigcode_config, config)
 }
 
+#' Loads GPTBigCode from HF Model Hub
+#' @inheritParams gpt_bigcode_config
 #' @importFrom hfhub WEIGHTS_NAME WEIGHTS_INDEX_NAME
+#' @export
 gpt_bigcode_from_pretrained <- function(identifier, ..., revision = "main") {
   config <- gpt_bigcode_config_from_pretrained(identifier, revision)
 
